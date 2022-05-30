@@ -4,8 +4,17 @@
   <a id="shortURL" href="/{{ shortURL }}">http://{{ host }}/{{ shortURL }}</a>
 </div>
 <div class="d-flex justify-content-center">
-  <button class="btn btn-primary" id="copy-link">Copy</button>
+  <button class="btn btn-primary" id="copy-link" onclick="copyLink()">Copy</button>
 </div>
+
+<script>
+  function copyLink() {
+    const shortLink = document.querySelector('#shortURL').innerText
+    navigator.clipboard.writeText(shortLink)
+      .then(() => alert('Link was coppied!'))
+      .catch(error => console.log(error))
+  }
+</script>
 {{else}}
 <form action="/" method="post">
   <div class="mb-3 row" style="width: 65vmin;">
