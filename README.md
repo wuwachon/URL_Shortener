@@ -17,7 +17,7 @@
 - 下載到本地
 
 ```
-git clone https://github.com/wuwachon/URL_Shortener
+git clone https://github.com/wuwachon/URL_Shortener.git
 ```
 
 - 安裝相關套件
@@ -45,3 +45,4 @@ Terminal 顯示 http://localhost:3000 即表示啟動完成，可至此網址網
 ## 練習技巧
 
 - express、mongoose 及其他 npm 套件應用練習
+- 使用 routes modules 簡潔 app.js 檔案
