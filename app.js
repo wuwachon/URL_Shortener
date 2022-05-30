@@ -53,5 +53,14 @@ app.post('/', (req, res) => {
     })
     .catch(error => console.log(error))
 })
+app.get('/:shortURL', (req, res) => {
+  const shortURL = req.params.shortURL
+  return URL.findOne({ shortURL })
+    .lean()
+    .then(url => {
+      if (!url) return res.render('error')
+      res.redirect(url.originURL)
+    })
+})
 // app.listen
 app.listen(PORT, () => console.log(`http://localhost:${PORT}`))
